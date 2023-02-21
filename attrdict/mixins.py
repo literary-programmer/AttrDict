@@ -2,7 +2,12 @@
 Mixin Classes for Attr-support.
 """
 from abc import ABCMeta, abstractmethod
-from collections import Mapping, MutableMapping, Sequence
+# From python 3.10, collections.* aliases are removed. Use collections.abc.* instead after trying the old way.
+try:
+    from collections import Mapping, MutableMapping, Sequence
+except ImportError:
+    from collections.abc import Mapping, MutableMapping, Sequence
+
 import re
 
 import six

@@ -1,7 +1,11 @@
 """
 An implementation of MutableAttr.
 """
-from collections import Mapping
+# From python 3.10, collections.* aliases are removed. Use collections.abc.* instead after trying the old way.
+try:
+    from collections import Mapping
+except ImportError:
+    from collections.abc import Mapping
 
 import six
 
